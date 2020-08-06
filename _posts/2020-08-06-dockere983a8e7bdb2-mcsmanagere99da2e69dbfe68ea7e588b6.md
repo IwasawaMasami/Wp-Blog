@@ -30,7 +30,8 @@ post_date: 2020-08-06 16:39:18
 
 <h4>第一种：直接使用docker命令部署（省事）：</h4>
 
-<strong>docker run -it -d --name=mcsm -p 23333:23333 -v ~/自定义宿主机目录:/root/mcsmanager/你想要挂载的容器目录 tookizhang/mcsmanager</strong>
+<pre><code class="language-shell ">docker run -it -d --name=mcsm -p 23333:23333 -v ~/自定义宿主机目录:/root/mcsmanager/你想要挂载的容器目录 tookizhang/mcsmanager
+</code></pre>
 
 docker images 【查看已有镜像】
 
