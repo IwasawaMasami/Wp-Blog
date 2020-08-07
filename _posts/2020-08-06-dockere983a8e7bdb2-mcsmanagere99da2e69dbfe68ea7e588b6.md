@@ -33,7 +33,7 @@ post_date: 2020-08-06 16:39:18
 <pre><code class="language-shell ">docker run -it -d --name=mcsm  -v ~/自定义宿主机目录:/root/mcsmanager/你想要挂载的容器目录 tookizhang/mcsmanager
 </code></pre>
 
-镜像里默认开放了默认游戏服务端端口，面板访问端以及和文件传输端口，如果需要批量开放端口请加入参数 -p XXXXX-XXXXX:XXXXX-XXXXX
+<strong>镜像里默认开放了默认游戏服务端端口，面板访问端以及和文件传输端口，如果需要批量开放端口请加入参数 -p XXXXX-XXXXX:XXXXX-XXXXX eg: -p 25566-25570:25566-25570</strong>
 
 docker images 【查看已有镜像】
 
