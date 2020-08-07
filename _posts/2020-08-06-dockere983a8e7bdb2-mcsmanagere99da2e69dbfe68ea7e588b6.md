@@ -71,7 +71,8 @@ RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Cen
            update
 RUN yum -y install screen \
     git \
-    curl
+    curl \
+    java
 RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
     &amp;&amp; yum install -y nodejs
 RUN git clone https://github.com/suwings/mcsmanager.git
@@ -97,7 +98,8 @@ RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Cen
            update
 RUN yum -y install screen \
     git \
-    curl
+    curl \
+    java
 RUN curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
     &amp;&amp; yum install -y nodejs
 COPY mcsmanager /root/mcsmanager 
