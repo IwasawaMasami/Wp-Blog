@@ -30,8 +30,10 @@ post_date: 2020-08-06 16:39:18
 
 <h4>第一种：直接使用docker命令部署（省事）：</h4>
 
-<pre><code class="language-shell ">docker run -it -d --name=mcsm -p 23333:23333 -v ~/自定义宿主机目录:/root/mcsmanager/你想要挂载的容器目录 tookizhang/mcsmanager
+<pre><code class="language-shell ">docker run -it -d --name=mcsm  -v ~/自定义宿主机目录:/root/mcsmanager/你想要挂载的容器目录 tookizhang/mcsmanager
 </code></pre>
+
+镜像里默认开放了默认游戏服务端端口，面板访问端以及和文件传输端口，如果需要批量开放端口请加入参数 -p XXXXX-XXXXX:XXXXX-XXXXX
 
 docker images 【查看已有镜像】
 
@@ -83,10 +85,13 @@ RUN cd /root/mcsmanager \
     &amp;&amp; npm install
 WORKDIR /root/mcsmanager
 ENTRYPOINT npm start
-EXPOSE 23333 10022
+EXPOSE 23333 10022 25565
 </code></pre>
 
-<h5>2.在当前目录下使用命令docker build -t  mcsmanager .</h5>
+<h5>2.在当前目录下使用命令</h5>
+
+<pre><code class="language-shell ">docker build -t  mcsmanager .
+</code></pre>
 
 <strong>嫌git clone慢的同学可以使用下面的dockerfile,但是必须得先把双羽大佬的源码给克隆到当前目录才可以：</strong>
 
@@ -108,9 +113,7 @@ RUN cd /root/mcsmanager \
     &amp;&amp; npm install
 WORKDIR /root/mcsmanager
 ENTRYPOINT npm start
-EXPOSE 23333 10022
-
-
+EXPOSE 23333 10022 25565
 </code></pre>
 
 <strong>最后构建完成后，如第一种方法所示运行镜像即可</strong>
